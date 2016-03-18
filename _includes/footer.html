@@ -1,0 +1,25 @@
+<footer class="site-footer">
+    <div class="container">
+        <nav>
+            <a href="{{ site.url }}">{{ site.company }}</a> &middot;
+            <a href="/articles/index.html">Articles</a> &middot;
+            <a href="/services.html">Services</a> &middot;
+            <a href="/about.html">About</a>
+        </nav>
+        
+        <nav class="social">
+            {% if site.social.twitter %}
+            <a href="https://twitter.com/{{ site.social.twitter }}" title="Follow on Twitter" target="_blank"><i class="icon icon-twitter black"></i></a>
+            {% endif %}
+            {% if site.social.facebook %}
+            <a href="http://facebook.com/{{ site.social.facebook }}" title="Follow on Facebook" target="_blank"><i class="icon icon-facebook black"></i></a>
+            {% endif %}    
+            <a href="/feed.xml" title="RSS Feed">
+                <i class="icon icon-rss black"></i>
+            </a>
+        </nav>
+    </div>
+    <div class="container">
+        <p class="copyright text-muted small">Copyright &copy; {{ site.time | date: "%Y" }} {{ site.title }} All Rights Reserved</p> 
+    </div>
+</footer>

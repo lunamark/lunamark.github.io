@@ -1,0 +1,63 @@
+---
+layout: base
+title: Lunamark
+subTitle: 
+---
+
+<div class="blog-cover" style="background-image:url(/images/{{ site.cover_image }});">
+    <section>
+        <div class="container">
+            <h1>{{ site.title }}</h1>
+            {% if site.subtitle %}<h3>{{ site.subtitle }}</h3>{% endif %}
+        
+            {% if site.social.twitter %}
+            <a href="https://twitter.com/{{ site.social.twitter }}" title="Follow on Twitter" target="_blank"><i class="icon icon-twitter"></i></a>
+            {% endif %}
+            {% if site.social.facebook %}
+            <a href="http://facebook.com/{{ site.social.facebook }}" title="Like on Facebook" target="_blank"><i class="icon icon-facebook"></i></a>
+            {% endif %}
+            <a href="/feed.xml" title="RSS Feed">
+                <i class="icon icon-rss"></i>
+            </a>
+        </div>
+    </section>
+</div>
+<div class="clearfix"</div>
+<section id="services">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Services</h2>
+                <h3 class="section-subheading text-muted">Sub-title goes here<h3>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-lg-4">
+                <span class="fa-stack fa-4x">
+                    <i class="fa fa-circle fa-stack-2x services-color"></i>
+                    <i class="fa fa-code fa-stack-1x fa-inverse"></i>
+                </span>
+                <h4 class="service-heading">Application Development</h4>
+                <p class="text-muted">We are really excited about the future of ASP.NET especially since the formation of the .NET Foundation and open sourcing of ASP.NET.  It is also great that Microsoft decided to make ASP.NET cross platform and would enjoy the opportunity to discuss your ASP.NET Core web project to see if we can help.</p>
+            </div>
+            <div class="col-lg-4">
+                <span class="fa-stack fa-4x">
+                    <i class="fa fa-circle fa-stack-2x services-color"></i>
+                    <i class="fa fa-users fa-stack-1x fa-inverse"></i>
+                </span>
+                <h4 class="service-heading">Clean Code Coaching</h4>
+                <p class="text-muted">We </p>
+            </div>
+            <div class="col-lg-4">
+                <span class="fa-stack fa-4x">
+                    <i class="fa fa-circle fa-stack-2x services-color"></i>
+                    <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
+                </span>
+                <h4 class="service-heading">Code Review Mentoring</h4>
+                <p class="text-muted">We bring the energy and speed of a startup to your business. We use agile techniques to deliver value faster with less risk.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include contact.html %}

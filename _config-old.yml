@@ -1,0 +1,29 @@
+# ----------------------- #
+#      Main Configs       #
+# ----------------------- #
+
+url: http://lunamark.com
+title: Lunamark
+email: info@lunamark.com
+author: Paul Gower
+description: > # "Founded in January 2014, Lunamark’s mission is to work together with our clients to solve their business problems through the use of software and technology. We strive to develop quality software that is easy to maintain; however, if clients want a more hands-on transition after their custom software solution is complete, we offer consulting and training services."
+
+# ----------------------- #
+#    Jekyll & Plugins     #
+# ----------------------- #
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+# ----------------------- #
+#   3rd Party Settings    #
+# ----------------------- #
+
+social:
+  - title: twitter
+    url: https://twitter.com/paulmgower
+  - title: github
+    url: https://github.com/pmgower
+  - title: linkedin
+    url: https://linkedin.com/in/pmgower
