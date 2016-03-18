@@ -2,8 +2,6 @@ gems:
   - jekyll-sitemap
   - jekyll-paginate
   - jekyll-feed
-  - jekyll-redirect-from
-  - jekyll-sass-converter
   
 # Site Information
 title:        Lunamark
