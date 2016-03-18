@@ -33,9 +33,9 @@ rake site:publish
 
 ## Authors
 
-Originally build for [sendtoinc.com](https://sendtoinc.com), your workspace for sharing and organizing knowledge by [**Karri Saarinen**](http://github.com/ksaa) and [**Jori Lallo**](http://github.com/jorilallo)
+Originally build for [sendtoinc.com](https://sendtoinc.com), your workspace for sharing and organizing knowledge by [Karri Saarinen](http://github.com/ksaa) and [Jori Lallo](http://github.com/jorilallo)
 
-Modified by [**Paul Gower**](http://github.com/pmgower) to build the website for his company, [Lunamark](http://lunamark.com)
+Modified by [Paul Gower](http://github.com/pmgower) to build the website for his company, [Lunamark](http://lunamark.com)
 
 ## Copyright and license
 
