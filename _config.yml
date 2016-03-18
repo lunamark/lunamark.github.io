@@ -1,6 +1,10 @@
 gems: 
+  - jekyll-sitemap
   - jekyll-paginate
   - jekyll-feed
+  - jekyll-redirect-from
+  - jekyll-sass-converter
+  
 # Site Information
 title:        Lunamark
 description:  "Where you can learn about how Lunamark can help your business make its mark using software."
