@@ -4,69 +4,8 @@ title: Lunamark
 subTitle: 
 ---
 
-<div class="blog-cover" style="background-image:url(/images/{{ site.cover_image }});">
-    <section>
-        <div class="container">
-            <h1>{{ site.title }}</h1>
-            {% if site.subtitle %}<h3>{{ site.subtitle }}</h3>{% endif %}
-        
-            {% if site.social.twitter %}
-            <a href="https://twitter.com/{{ site.social.twitter }}" title="Follow on Twitter" target="_blank"><i class="icon icon-twitter"></i></a>
-            {% endif %}
-            {% if site.social.facebook %}
-            <a href="http://facebook.com/{{ site.social.facebook }}" title="Like on Facebook" target="_blank"><i class="icon icon-facebook"></i></a>
-            {% endif %}
-            <a href="/feed.xml" title="RSS Feed">
-                <i class="icon icon-rss"></i>
-            </a>
-        </div>
-    </section>
-</div>
-<div class="clearfix"</div>
-<section id="services">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h2 class="section-heading">Services</h2>
-                <h3 class="section-subheading text-muted">Sub-title goes here<h3>
-            </div>
-        </div>
-        <div class="row text-center">
-            <div class="col-lg-4">
-                <a href=""><span class="fa-stack fa-4x">
-                    <i class="fa fa-circle fa-stack-2x services-color"></i>
-                    <i class="fa fa-code fa-stack-1x fa-inverse"></i>
-                </span></a>
-                <h4 class="service-heading">Analyze</h4>
-                <p class="text-muted small">
-                    Your company’s time and resources are important. Problems with your software should not eclipse your goal.
-                    <a href="services/analyze.html">Read More</a>
-                </p>
-            </div>
-            <div class="col-lg-4">
-                <span class="fa-stack fa-4x">
-                    <i class="fa fa-circle fa-stack-2x services-color"></i>
-                    <i class="fa fa-users fa-stack-1x fa-inverse"></i>
-                </span>
-                <h4 class="service-heading">Consult</h4>
-                <p class="text-muted small">
-                    A good consultant solves problems. A great consultant listens to what you say, but also uncovers needs you do not know you have.
-                    <a href="services/consult.html">Read More</a>
-                </p>
-            </div>
-            <div class="col-lg-4">
-                <span class="fa-stack fa-4x">
-                    <i class="fa fa-circle fa-stack-2x services-color"></i>
-                    <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
-                </span>
-                <h4 class="service-heading">Develop</h4>
-                <p class="text-muted small">
-                    Lunamark takes the decision to buy versus build software very seriously.  If building a custom solution is best for your needs, then let us build it for you.
-                    <a href="services/develop.html">Read More</a>
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
+{% include main-header.html %}
+
+{% include main-services.html %}
 
 {% include contact.html %}

@@ -1,6 +1,7 @@
 ---
 layout: service
 title: Develop
+fa-icon: fa-circle
 ---
 
 Lunamark takes the decision to buy versus build software very seriously.  If building a custom solution is best for your needs, then let us build it for you.

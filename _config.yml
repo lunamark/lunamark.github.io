@@ -1,7 +1,4 @@
-gems: 
-  - jekyll-sitemap
-  - jekyll-paginate
-  - jekyll-feed
+gems: [jekyll-sitemap, jekyll-paginate, jekyll-feed, jekyll-gist]
   
 # Site Information
 title:        Lunamark
@@ -12,13 +9,13 @@ author:
     email:    "info@lunamark.com"
     url:      "https://linkedin.com/in/pmgower"
 company:      Lunamark
-subtitle:     "Illuminating a path for your business to make its mark"
+#subtitle:     "Illuminating a path for your business to make its mark"
 logo:         logo-H.png
 cover_image:  LittleRock_panorama.jpg
 
 # Analytics     
 analytics:
-    google: false # Add tracking code in _includes/_google-analytics.html
+    google: true # Add tracking code in _includes/_google-analytics.html
     
 # Google Fonts
 # eg. 'Droid+Sans:400,700|Droid+Serif:400,700'
@@ -32,11 +29,12 @@ social:
   linkedin:     pmgower
   twitter:      paulmgower
   #gplus:        '101183822199340201470'
+  resume-pdf:   "http://resume.linkedinlabs.com/9ql9xgj9r"
   
   # Comments
   disqus:
     # Eg. "exampleblog" Set to false to disable comments
-    shortname:  false
+    shortname:  lunamark
   
   # Sharing settings
   sharing:
@@ -65,7 +63,7 @@ highlighter: true
 
 permalink:     none
 paginate_path: '/articles/page:num'
-paginate: 10
+paginate: 3
 
 markdown:      Kramdown
 markdown_ext:  markdown,mkd,mkdn,md

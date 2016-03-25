@@ -8,7 +8,7 @@ tags: [BIDS 2008, TFS 2010, VS 2008]
 #category: technology
 #cover_image: blog-cover.jpg
 
-excerpt: "Recently I had a client that needed to use BIDS to create some SSRS reports but they wanted to use TFS2010 for their source control. The latest version of"
+excerpt: "Recently I had a client that needed to use BIDS to create some SSRS reports but they wanted to use TFS2010 for their source control. The latest version"
 
 author:
   name: Paul Gower

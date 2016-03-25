@@ -2,13 +2,13 @@
 layout: post
 
 title: _ViewStart.cshtml Info
-subtitle: ""
+subtitle:
 date: 2012-06-30 14:52:00
 tags: [asp.net mvc]
 #category: technology
 #cover_image: blog-cover.jpg
 
-excerpt: "Incorporated provides a great typography, responsive design, author details, semantic markup and more."
+excerpt: In ASP.NET MVC3 "master pages" are handled in the _ViewStart.cshtml file. As the name suggests the code in this file is executed before each view is
 
 author:
   name: Paul Gower

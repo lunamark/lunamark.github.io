@@ -1,26 +1,48 @@
 ---
 layout: base
 ---
-<div class="blog-cover" style="background-image:url(/images/about_image.jpg);">
-    <section>
-        <div class="container">
-            <h1>{{ site.title }}</h1>
-            {% if site.subtitle %}<h3>{{ site.subtitle }}</h3>{% endif %}
-        
-            {% if site.social.twitter %}
-            <a href="https://twitter.com/{{ site.social.twitter }}" title="Follow on Twitter" target="_blank"><i class="icon icon-twitter"></i></a>
-            {% endif %}
-            {% if site.social.facebook %}
-            <a href="http://facebook.com/{{ site.social.facebook }}" title="Like on Facebook" target="_blank"><i class="icon icon-facebook"></i></a>
-            {% endif %}
-            <a href="/feed.xml" title="RSS Feed">
-                <i class="icon icon-rss"></i>
-            </a>
-        </div>
-    </section>
-</div>
 
-<section class="container">
-    <p>Founded in January 2014, Lunamark’s mission is to work together with our clients to solve their business problems through the use of software and technology. We strive to develop quality software that is easy to maintain; however, if clients want a more hands-on transition after their custom software solution is complete, we offer consulting and training services.</p>
-    <p>Although Lunamark has primarily used Microsoft technologies to develop software, we continue to learn about other languages and technologies. At Lunamark we believe in using the right tools for the problem, which does not always mean the solution comes from the same company or technology stack. Due to the nature of software development and its ever changing landscape, we continue to learn about the latest from Microsoft, as well as learn other technology stacks to stretch our skills and give you the best solutions.</p>
+<section>
+    <div class="container">
+        <div class="row"><div class="col-lg-12">&nbsp;</div></div>
+        <div class="row">
+            <div class="col-lg-4">
+                <img src="/images/paul.png" class="img-responsive img-circle" alt="Paul Gower" />
+                <h4>Paul Gower</h4>
+                <p class="text-muted">Principal Consultant / Founder</p>
+                <ul class="list-inline social-buttons">
+                    <li>
+                        <a href="https://twitter.com/{{ site.social.twitter }}" title="Paul on Twitter" target="_blank">
+                            <span class="fa-stack">
+                                <i class="fa fa-circle fa-stack-2x services-color"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://linkedin.com/in/{{ site.social.linkedin }}" title="Paul on LinkedIn" target="_blank">
+                            <span class="fa-stack">
+                                <i class="fa fa-circle fa-stack-2x services-color"></i>
+                                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ site.social.resume-pdf }}" title="Paul's Resume as PDF" target="_blank">
+                            <span class="fa-stack">
+                                <i class="fa fa-circle fa-stack-2x services-color"></i>
+                                <i class="fa fa-file-pdf-o fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <article class="container">
+        <p>Founded in January 2014, Lunamark’s mission is to work together with our clients to solve their business problems through the use of software and technology. We strive to develop quality software that is easy to maintain; however, if clients want a more hands-on transition after their custom software solution is complete, we offer consulting and training services.</p>
+        <p>Although Lunamark has primarily used Microsoft technologies to develop software, we continue to learn about other languages and technologies. At Lunamark we believe in using the right tools for the problem, which does not always mean the solution comes from the same company or technology stack. Due to the nature of software development and its ever changing landscape, we continue to learn about the latest from Microsoft, as well as learn other technology stacks to stretch our skills and give you the best solutions.</p>
+    </article>
 </section>
