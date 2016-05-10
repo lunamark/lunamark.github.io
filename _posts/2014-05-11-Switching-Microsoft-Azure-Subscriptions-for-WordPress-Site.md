@@ -8,7 +8,7 @@ tags: [ASP.NET, IIS7, Server Config]
 #category: technology
 #cover_image: blog-cover.jpg
 
-excerpt: "Recently I was asked to look at adding a robots.txt file to a client's website that we built on ASP.NET MVC3. So I did some research and found out"
+excerpt: "Have you ever wanted to move your WordPress Microsoft Azure Website from a pay-as-you-go subscription to a BizSpark subscription"
 
 author:
   name: Paul Gower
