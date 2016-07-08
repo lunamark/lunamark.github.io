@@ -20,13 +20,15 @@ author:
 
 Over the past several months, I have been using [Umbraco](http://umbraco.com) with a few clients and have really enjoyed getting to know the platform.  _So please understand that although I have over 15 years experience developing in C#.NET, I am still learning about the best way to do things in Umbraco_.
 
-In a more recent project, I discovered that the [Nested Content](http://our.umbraco.org/projects/backoffice-extensions/nested-content/) control, I have grown to love, did not work the way I had initially thought.  I knew it stored the data in a JSON string for the property but it had never dawned on me that it didn't create the **nodes in Umbraco**.  I found this [form post asking a similar question](https://our.umbraco.org/projects/backoffice-extensions/nested-content/nested-content-feedback/63488-does-nested-content-get-an-id-value) and as you can see in Matt Bailsford's first response:
+##I need a way to associate a Nested Content node to an Umbraco Member
+
+In a more recent project, I discovered that the [Nested Content](http://our.umbraco.org/projects/backoffice-extensions/nested-content/) control, I have grown to love, did not work the way I had initially thought.  I knew it stored the data in a JSON string for the property but it had never dawned on me that it didn't create the **nodes in Umbraco**.  My initial thought was to create an [Umbraco Relation](https://umbraco.com/follow-us/blog-archive/2012/12/7/getting-to-know-umbraco-relations/) and associate the Umbraco Member to the Nested Content node.  Sadly, I found this [form post asking a similar question](https://our.umbraco.org/projects/backoffice-extensions/nested-content/nested-content-feedback/63488-does-nested-content-get-an-id-value) and as you can see in Matt Bailsford's first response:
 
 > Unfortunately nested content can't have an ID value as they don't truely exist
 
 I did find the [issue/feature](https://github.com/leekelleher/umbraco-nested-content/issues/7) that was discussed in the forum post; however, it just adds parent information to the `DetachedPublishedContent` object and doesn't solve my issue.  After reading the form post and the conversations of [Hendy Racher](https://github.com/Hendy), [Matt Bailsford](https://github.com/mattbrailsford) and [Lee Kelleher](https://github.com/leekelleher) in the [github pull request](https://github.com/leekelleher/umbraco-nested-content/pull/8), I still don't understand why Nested Content doesn't *create a node in Umbraco*.
 
-So basically I need the Nested Content nodes **to be created as Umbraco nodes** and _then_ stored as a JSON string in the property field.  There are two ways that I see this could be accomplished:
+So basically I need the Nested Content nodes **to be created as Umbraco nodes** and _then_ stored as a JSON string in the property field.  There are a few ways that I see this could be accomplished:
 
 1. **Create a Custom Property Editor for Umbraco Backoffice** - I would start with a copy of Nested Content and add code to create the node and attach it before saving the node as a JSON string.
 
