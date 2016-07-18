@@ -45,6 +45,31 @@ section#about {
     }
 }
 
+section#articles {
+    &.container {
+        max-width: 1024px;
+        padding-top: 60px;
+
+        article {
+            padding: 0px;
+        }
+    }
+}
+
+section#speaking {
+    &.container {
+        max-width: 1280px;
+    }
+    table.table {
+        td {
+            img {
+                display:block; 
+                margin:0 auto;
+            }
+        }
+    }
+}
+
 // section#contact .form-group textarea.form-control {
 //     height: 236px;
 // }

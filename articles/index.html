@@ -1,14 +1,20 @@
 ---
 layout: base
 ---
-<article class="container">
+<section id="articles" class="container">
 {% for post in paginator.posts %}
   {% unless post.draft %}
-    <section class="index">
+    <article class="index">
         <!-- {% if post.author.image %}<img src="/images/{{ post.author.image }}" class="avatar">{% endif %}-->
         <div>
             <h2 class="title"><a href="{{ post.url }}" rel="prefetch">{{ post.title }}</a></h2>
-            <p>{{ post.excerpt }}</p>
+            {{ if post.excerpt }}
+            <p>{{ post.excerpt }}
+            {{ else }}
+            <p>{{ post.content | truncatewords:50 | strip_html }}            
+            {{ endif }}
+             <a href="{{ post.url }}">Read More</a></p>
+
             <div class="meta">
                 Written By <address>{{ post.author.name }}</address> 
                 <!--&mdash;
@@ -16,10 +22,10 @@ layout: base
             </div>
         </div>
         <hr>
-    </section>
+    </article>
     {% endunless %}
 {% endfor %}
-    <section class="pagination" style="text-align:center">
+    <artcile class="pagination" style="text-align:center">
       {% if paginator.previous_page %}
         {% if paginator.previous_page == 1 %}
         <a href="/articles/" class="btn btn-outline">‹ Newer</a>
@@ -30,5 +36,5 @@ layout: base
       {% if paginator.next_page %}
         <a href="{{ paginator.next_page_path }}" class="btn btn-outline">Older ›</a>
       {% endif %}
-    </section>
-</article>
+    </article>
+</section>

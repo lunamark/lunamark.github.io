@@ -63,7 +63,7 @@ highlighter: true
 
 permalink:     none
 paginate_path: '/articles/page:num'
-paginate: 3
+paginate: 4
 
 markdown:      Kramdown
 markdown_ext:  markdown,mkd,mkdn,md
