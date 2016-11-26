@@ -4,7 +4,7 @@ layout: post
 
 title: How to setup ModelsBuilder in Umbraco 7.4.3
 subtitle: 
-date: 2015-05-04 20:22:00
+date: 2016-05-09 20:22:00
 tags: [Umbraco]
 #category: technology
 #cover_image: blog-cover.jpg
