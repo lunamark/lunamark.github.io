@@ -41,3 +41,9 @@ Modified by [Paul Gower](http://github.com/pmgower) to build the website for his
 
 Copyright 2016 Lunamark LLC under [The MIT License ](LICENSE)
 
+
+## Alternatives to get it working locally with `rbenv`
+* Install and use rbenv to instsall ruby. (this was tested with 2.6.1)
+* `bundle install` failed on `ffi` so had to upgrade that gem to 1.10.0
+* Had to use `bundle exec jekyll serve --watch` to get it to work rather than just `jeckyll serve --watch`
+* Had to use `bundle exec rake site:publish` rather than just `rake site:publish`
