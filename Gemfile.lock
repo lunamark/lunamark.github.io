@@ -24,7 +24,7 @@ GEM
     faraday (0.14.0)
       multipart-post (>= 1.2, < 3)
     fastimage (2.1.1)
-    ffi (1.9.21)
+    ffi (1.10.0)
     forwardable-extended (2.6.0)
     gemoji (3.0.0)
     github-pages (177)
@@ -261,4 +261,4 @@ DEPENDENCIES
   uglifier
 
 BUNDLED WITH
-   1.16.1
+   1.17.2
