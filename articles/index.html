@@ -8,11 +8,11 @@ layout: base
         <!-- {% if post.author.image %}<img src="/images/{{ post.author.image }}" class="avatar">{% endif %}-->
         <div>
             <h2 class="title"><a href="{{ post.url }}" rel="prefetch">{{ post.title }}</a></h2>
-            {{ if post.excerpt }}
+            {% if post.excerpt %}
             <p>{{ post.excerpt }}
-            {{ else }}
+            {% else %}
             <p>{{ post.content | truncatewords:50 | strip_html }}            
-            {{ endif }}
+            {% endif %}
              <a href="{{ post.url }}">Read More</a></p>
 
             <div class="meta">
