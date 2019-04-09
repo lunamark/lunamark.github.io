@@ -8,8 +8,6 @@ tags: [Database Mail, DBMail, SQL Server 2012]
 #category: technology
 #cover_image: blog-cover.jpg
 
-excerpt: "Recently I was asked to look at adding a robots.txt file to a client's website that we built on ASP.NET MVC3. So I did some research and found out"
-
 author:
   name: Paul Gower
   twitter: paulmgower

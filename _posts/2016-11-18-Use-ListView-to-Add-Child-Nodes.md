@@ -8,8 +8,6 @@ tags: [Umbraco]
 #category: technology
 cover_image: stone-relaxation.jpg
 
-excerpt: ""
-
 author:
   name: Paul Gower
   twitter: paulmgower
