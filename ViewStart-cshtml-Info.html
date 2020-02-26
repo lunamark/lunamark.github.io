@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta name="p:domain_verify" content="9014f386d3ae48f3e6761184cc355bd7"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>_ViewStart.cshtml Info &mdash; Lunamark</title>
+
+    <link href="//fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- Bootstrap Optional theme -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+        
+    <link type="text/css" rel="stylesheet" href="/assets/main.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <!-- <link rel="apple-touch-icon" href="/images/logo-H.png"/> -->
+    <link href="/feed.xml" rel="alternate" type="application/rss+xml" title="Lunamark" />
+    <meta name="title" content="_ViewStart.cshtml Info ">
+    <link rel="canonical" href="http://lunamark.github.io/ViewStart-cshtml-Info.html">
+ 
+       
+    <meta property="og:title" content="_ViewStart.cshtml Info "/>
+    <meta property="og:url" content="http://lunamark.github.io/ViewStart-cshtml-Info.html"/>
+
+    <meta property="og:image" content="http://lunamark.github.io/images/logo-H.png"/>   
+
+    <meta property="og:description" content="In ASP.NET MVC3 "master pages" are handled in the _ViewStart.cshtml file. As the name suggests the code in this file is executed before each view is"/>
+    <meta name="description" content="In ASP.NET MVC3 "master pages" are handled in the _ViewStart.cshtml file. As the name suggests the code in this file is executed before each view is"/>
+
+    <meta property="og:site_name" content="Lunamark">
+
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-M9XWBGD');</script>
+    <!-- End Google Tag Manager -->
+         
+</head>
+
+    <body>
+        
+            <!-- Google Tag Manager (noscript) -->
+            <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M9XWBGD" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+            <!-- End Google Tag Manager (noscript) -->
+        
+
+        <section class="site-nav">
+    <header>
+        <nav id="navigation">
+            <a class="brand" href="/">
+                <img src="/images/logo-H.png" alt="Logo">
+            </a>
+            <a href="/articles/" class="home">Articles</a>
+            <a href="/services/">Services</a>
+            <a href="/speaking.html">Speaking</a>
+            <a href="/about.html">About</a>
+        </nav>
+        <!--<nav class="tagline">
+            <span>Want to learn how to ship features to your software faster?</span>
+            <a href="/roadmap.html" class="btn btn-outline">Learn More</a>
+        </nav>-->
+    </header>
+</section>
+
+
+        
+<article class="container">
+    <header>
+        <div class="meta">
+            By <address><a rel="author" href="" title="Paul Gower" target="_blank">Paul Gower</a></address> &mdash;
+            <time pubdate datetime="2012-30-June" title="June 30, 2012">June 30, 2012</time>
+        </div>
+        <h1 class="title">_ViewStart.cshtml Info</h1>
+        
+    </header>
+
+    <section>
+        <p>In ASP.NET MVC3 “master pages” are handled in the <strong>_ViewStart.cshtml</strong> file. As the name suggests the code in this file is executed before each view is rendered (see <a href="http://weblogs.asp.net/scottgu/archive/2010/10/22/asp-net-mvc-3-layouts.aspx">Scott Gu’s blog post</a> for more details).</p>
+
+<p>Now that you understand the basic use of _ViewStart.cshtml file lets go over the scope applied to these files. The _ViewStart.cshtml file will affect all views in the same directory and below the location of it. Also you can have another _ViewStart.cshtml file under a sub-folder which will be executed after the top level _ViewStart.cshtml. Using this feature you can in effect override the top level _ViewStart.cshtml with one closer to the view.</p>
+
+<p><img src="images/articles/2012-06-30-viewstart_example.png" alt="alt text" title="ViewStart Example" /></p>
+
+<p>Now when the <strong>Index.cshtml view</strong> under the <strong>Home</strong> folder is rendered, it will first execute the
+<strong>/Views/_ViewStart.cshtml</strong> file and then it will render the <strong>Index.cshtml View</strong>.</p>
+
+<p>However, when the <strong>Index.cshtml view</strong> under the <u>DifferentMasterPage</u> folder is rendered, it will
+first execute the <strong>/Views/_ViewStart.cshtml</strong> file, then it will execute
+the <strong>/Views/DifferentMasterPage/_ViewStart.cshtml</strong> file, and then it will
+render the <strong>Index.cshtml View</strong>.</p>
+
+        
+<div class="social">
+    <div>
+        <a href="https://twitter.com/share" class="twitter-share-button"  data-text="_ViewStart.cshtml Info" data-related="paulmgower">Tweet</a>
+    </div>
+    
+    
+    <div>
+        <div class="fb-like" data-width="150" data-layout="button_count" data-action="like" data-show-faces="true" data-send="false"></div>
+    </div>
+    
+    
+    
+    
+</div>
+
+    </section>
+
+    <footer>
+        <address>
+            <img src="/images/paul.jpg">
+            <p>Written by <strong><a rel="author" href="https://twitter.com/paulmgower" title="" target="_blank">Paul Gower</a></strong><br>
+            <span class="muted">Principal Consultant / Owner, Lunamark</span>
+            </p>
+        </address>
+    </footer>
+
+    
+    <section>
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'lunamark'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+    </section>
+    
+</article>
+
+
+        <footer class="site-footer">
+    <div class="container">
+        <nav>
+            <a href="/">Lunamark</a> &middot;
+            <a href="/articles/">Articles</a> &middot;
+            <a href="/services/">Services</a> &middot;
+            <a href="/speaking.html">Speaking</a> &middot;
+            <a href="/about.html">About</a>
+        </nav>
+        
+        <nav class="social">
+            
+            <a href="https://twitter.com/paulmgower" title="Follow on Twitter" target="_blank"><i class="icon icon-twitter black"></i></a>
+            
+                
+            <a href="/feed.xml" title="RSS Feed">
+                <i class="icon icon-rss black"></i>
+            </a>
+        </nav>
+    </div>
+    <div class="container">
+    <p class="copyright text-muted small">Copyright &copy; 2020 Lunamark All Rights Reserved</p> 
+</div>
+
+</footer>
+
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/assets/lib/jqBootstrapValidation.js"></script>
+<script type="text/javascript" src="/assets/main.js"></script>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=253595308025739";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+
+    </body>
+</html>

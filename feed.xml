@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://lunamark.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="http://lunamark.github.io/" rel="alternate" type="text/html" /><updated>2020-02-26T10:36:59-06:00</updated><id>http://lunamark.github.io/feed.xml</id><title type="html">Lunamark</title><subtitle>Where you can learn about how Lunamark can help your business make its mark using software.</subtitle><author><name>Paul Gower</name><email>info@lunamark.com</email></author><entry><title type="html">Use ListView to Add Child Nodes</title><link href="http://lunamark.github.io/Use-ListView-to-Add-Child-Nodes.html" rel="alternate" type="text/html" title="Use ListView to Add Child Nodes" /><published>2016-11-18T09:00:00-06:00</published><updated>2016-11-18T09:00:00-06:00</updated><id>http://lunamark.github.io/Use-ListView-to-Add-Child-Nodes</id><content type="html" xml:base="http://lunamark.github.io/Use-ListView-to-Add-Child-Nodes.html">&lt;p&gt;In a &lt;a href=&quot;/Frustration-with-Umbraco-Nested-Content.html&quot;&gt;previous blog post&lt;/a&gt;, I wrote about my frustration with the Nested Content plugin due to my unique requirements for my current project.  However, as I have learned more about Umbraco I have discovered a better way to implement a solution with built-in &lt;a href=&quot;//umbraco.com&quot;&gt;Umbraco&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;##Instead of Nested Content control, just create child nodes using List View.&lt;/p&gt;
+
+&lt;p&gt;The main reason for using the &lt;a href=&quot;//our.umbraco.org/projects/backoffice-extensions/nested-content/&quot;&gt;Nested Content&lt;/a&gt; control was because we liked the user experience when adding child nodes to the parent node but as described in my previous post unfortunately Nested Content doesn’t create &lt;em&gt;real&lt;/em&gt; nodes as I initially thought.  So to get a decent user experience we decided to use the a ListView property editor for the children nodes.  This way they are created as &lt;strong&gt;&lt;em&gt;real&lt;/em&gt; Umbraco nodes&lt;/strong&gt; and then I can use an &lt;a href=&quot;//umbraco.com/follow-us/blog-archive/2012/12/7/getting-to-know-umbraco-relations/&quot;&gt;Umbraco Relation&lt;/a&gt; to associate the child node(s) to the Umbraco Member account.&lt;/p&gt;
+
+&lt;p&gt;###How to use ListView property instead of Nested Content&lt;/p&gt;
+
+&lt;p&gt;This might be something that is really easy to understand for more &lt;em&gt;experienced&lt;/em&gt; Umbraco developers but I decided to describe the steps I used in case someone else has a similar problem and is new to Umbraco.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Add a property&lt;/strong&gt;  &lt;br /&gt;
+&lt;a href=&quot;/images/articles/2016-11-26-01-add-property.jpg&quot; title=&quot;Click to see larger screenshot&quot;&gt;&lt;img src=&quot;/images/articles/2016-11-26-01-add-property_thumb.jpg&quot; alt=&quot;Add a property&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Select the ListView editor&lt;/strong&gt;  &lt;br /&gt;
+&lt;a href=&quot;/images/articles/2016-11-26-02-listview-property-editor.jpg&quot; title=&quot;Click to see larger screenshot&quot;&gt;&lt;img src=&quot;/images/articles/2016-11-26-02-listview-property-editor_thumb.jpg&quot; alt=&quot;ListView property&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Setup the ListView property (default name is &lt;em&gt;DocuentType - PropertyName - PropertyType&lt;/em&gt;)&lt;/strong&gt;  &lt;br /&gt;
+&lt;a href=&quot;/images/articles/2016-11-26-03-listview-property-default-name.jpg&quot; title=&quot;Click to see larger screenshot&quot;&gt;&lt;img src=&quot;/images/articles/2016-11-26-03-listview-property-default-name_thumb.jpg&quot; alt=&quot;ListView property&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Submit the property&lt;/strong&gt;&lt;br /&gt;
+&lt;a href=&quot;/images/articles/2016-11-26-04-listview-property-set.jpg&quot; title=&quot;Click to see larger screenshot&quot;&gt;&lt;img src=&quot;/images/articles/2016-11-26-04-listview-property-set_thumb.jpg&quot; alt=&quot;ListView property&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Set Parent’s DocumentType Permissions&lt;/strong&gt;&lt;br /&gt;
+&lt;a href=&quot;/images/articles/2016-11-26-05-permissions.jpg&quot; title=&quot;Click to see larger screenshot&quot;&gt;&lt;img src=&quot;/images/articles/2016-11-26-05-permissions_thumb.jpg&quot; alt=&quot;ListView property&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Choose Child’s DocumentType&lt;/strong&gt;&lt;br /&gt;
+&lt;a href=&quot;/images/articles/2016-11-26-06-permissions-child.jpg&quot; title=&quot;Click to see larger screenshot&quot;&gt;&lt;img src=&quot;/images/articles/2016-11-26-06-permissions-child_thumb.jpg&quot; alt=&quot;ListView property&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Notice Child’s DocumentType is added&lt;/strong&gt;&lt;br /&gt;
+&lt;a href=&quot;/images/articles/2016-11-26-07-permissions-child-added.jpg&quot; title=&quot;Click to see larger screenshot&quot;&gt;&lt;img src=&quot;/images/articles/2016-11-26-07-permissions-child-added_thumb.jpg&quot; alt=&quot;ListView property&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Now you can add children via ListView’s Create option&lt;/strong&gt;&lt;br /&gt;
+&lt;a href=&quot;/images/articles/2016-11-26-08-listview-example-child.jpg&quot; title=&quot;Click to see larger screenshot&quot;&gt;&lt;img src=&quot;/images/articles/2016-11-26-08-listview-example-child_thumb.jpg&quot; alt=&quot;ListView property&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Would enjoy discussing with you a different way to solve this problem!&lt;/strong&gt;  Sound off in the comments below or reach out to me via &lt;a href=&quot;//twitter.com/paulmgower&quot;&gt;Twitter&lt;/a&gt; or &lt;a href=&quot;//linkedin.com/in/pmgower&quot;&gt;LinkedIn&lt;/a&gt;!&lt;/p&gt;</content><author><name>Paul Gower</name></author><category term="Umbraco" /><summary type="html">In a previous blog post, I wrote about my frustration with the Nested Content plugin due to my unique requirements for my current project. However, as I have learned more about Umbraco I have discovered a better way to implement a solution with built-in Umbraco. ##Instead of Nested Content control, just create child nodes using List View. The main reason for using the Nested Content control was because we liked the user experience when adding child nodes to the parent node but as described in my previous post unfortunately Nested Content doesn’t create real nodes as I initially thought. So to get a decent user experience we decided to use the a ListView property editor for the children nodes. This way they are created as real Umbraco nodes and then I can use an Umbraco Relation to associate the child node(s) to the Umbraco Member account. ###How to use ListView property instead of Nested Content This might be something that is really easy to understand for more experienced Umbraco developers but I decided to describe the steps I used in case someone else has a similar problem and is new to Umbraco. Add a property Select the ListView editor Setup the ListView property (default name is DocuentType - PropertyName - PropertyType) Submit the property Set Parent’s DocumentType Permissions Choose Child’s DocumentType Notice Child’s DocumentType is added Now you can add children via ListView’s Create option Would enjoy discussing with you a different way to solve this problem! Sound off in the comments below or reach out to me via Twitter or LinkedIn!</summary></entry><entry><title type="html">Frustration with Umbraco Nested Content</title><link href="http://lunamark.github.io/Frustration-with-Umbraco-Nested-Content.html" rel="alternate" type="text/html" title="Frustration with Umbraco Nested Content" /><published>2016-07-08T10:00:00-05:00</published><updated>2016-07-08T10:00:00-05:00</updated><id>http://lunamark.github.io/Frustration-with-Umbraco-Nested-Content</id><content type="html" xml:base="http://lunamark.github.io/Frustration-with-Umbraco-Nested-Content.html">&lt;p&gt;Over the past several months, I have been using &lt;a href=&quot;//umbraco.com&quot;&gt;Umbraco&lt;/a&gt; with a few clients and have really enjoyed getting to know the platform.  &lt;em&gt;So please understand that although I have over 15 years experience developing in C#.NET, I am still learning about the best way to do things in Umbraco&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; &lt;a href=&quot;/Use-ListView-to-Add-Child-Nodes.html&quot;&gt;Go here&lt;/a&gt; to see the solution I decided to use to solve this frustration.  After writing this article I decided to not use the Nested Content plugin at all and was able to actually use the built-in Umbraco controls.&lt;/p&gt;
+
+&lt;p&gt;##I need a way to associate a Nested Content node to an Umbraco Member&lt;/p&gt;
+
+&lt;p&gt;In a more recent project, I discovered that the &lt;a href=&quot;//our.umbraco.org/projects/backoffice-extensions/nested-content/&quot;&gt;Nested Content&lt;/a&gt; control, I have grown to love, did not work the way I had initially thought.  I knew it stored the data in a JSON string for the property but it had never dawned on me that it didn’t create the &lt;strong&gt;nodes in Umbraco&lt;/strong&gt;.  My initial thought was to create an &lt;a href=&quot;//umbraco.com/follow-us/blog-archive/2012/12/7/getting-to-know-umbraco-relations/&quot;&gt;Umbraco Relation&lt;/a&gt; and associate the Umbraco Member to the Nested Content node.  Sadly, I found this &lt;a href=&quot;//our.umbraco.org/projects/backoffice-extensions/nested-content/nested-content-feedback/63488-does-nested-content-get-an-id-value&quot;&gt;form post asking a similar question&lt;/a&gt; and as you can see in Matt Bailsford’s first response:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Unfortunately nested content can’t have an ID value as they don’t truely exist&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I did find the &lt;a href=&quot;//github.com/leekelleher/umbraco-nested-content/issues/7&quot;&gt;issue/feature&lt;/a&gt; that was discussed in the forum post; however, it just adds parent information to the &lt;code&gt;DetachedPublishedContent&lt;/code&gt; object and doesn’t solve my issue.  After reading the form post and the conversations of &lt;a href=&quot;//github.com/Hendy&quot;&gt;Hendy Racher&lt;/a&gt;, &lt;a href=&quot;//github.com/mattbrailsford&quot;&gt;Matt Bailsford&lt;/a&gt; and &lt;a href=&quot;//github.com/leekelleher&quot;&gt;Lee Kelleher&lt;/a&gt; in the &lt;a href=&quot;//github.com/leekelleher/umbraco-nested-content/pull/8&quot;&gt;github pull request&lt;/a&gt;, I still don’t understand why Nested Content doesn’t &lt;em&gt;create a node in Umbraco&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;So basically I need the Nested Content nodes &lt;strong&gt;to be created as Umbraco nodes&lt;/strong&gt; and &lt;em&gt;then&lt;/em&gt; stored as a JSON string in the property field.  There are a few ways that I see this could be accomplished:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Create a Custom Property Editor for Umbraco Backoffice&lt;/strong&gt; - I would start with a copy of Nested Content and add code to create the node and attach it before saving the node as a JSON string.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Use the &lt;a href=&quot;//our.umbraco.org/documentation/getting-started/backoffice/property-editors/built-in-property-editors/multinode-treepicker&quot;&gt;Umbraco Multinode Treepicker control&lt;/a&gt;&lt;/strong&gt; - This control was suggested by Hendy and Jeavon in &lt;a href=&quot;//our.umbraco.org/forum/umbraco-7/using-umbraco-7/55537-Multiple-Content-Picker-in-Umbraco-7&quot;&gt;this forum post&lt;/a&gt; as a way to allow a user to select multiple content nodes.  Unfortunately going this route would require the user to create the “nested content” nodes first.  Then they could associate those “nested content” nodes with the original node.  We really like the user experience of the Nested Content control where it allows you to create nodes dynamically in the property editor.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Find a way to associate the Member to the “Nested Content” node&lt;/strong&gt; - This option would require that I store an association between the top node and it’s respective “nested content” node to a Member in Umbraco.  There are two issues that come to mind when trying to go this route:&lt;/p&gt;
+    &lt;ol&gt;
+      &lt;li&gt;&lt;em&gt;How should I associate the “nested content” node to the Member in a standard Umbraco way?&lt;/em&gt; - I immediately think of creating a link table in the database but, in my understanding, that is not the standard Umbraco way.  I am still fuzzy about the best way to do this inside Umbraco.&lt;/li&gt;
+      &lt;li&gt;&lt;em&gt;Is there a way to uniquely identify the “nested content” node?&lt;/em&gt; - I realize there is a sort order value being set according to the pull request I found above but if the user reorders the nested content items will it change the “nested content” node to member association?&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;At this point, I am leaning towards going with &lt;strong&gt;option 1&lt;/strong&gt;, but I want to &lt;em&gt;investigate option 3&lt;/em&gt; a little more as well.  Also I don’t believe this is a new problem that someone hasn’t already solved, and I hate to create another custom property editor if there is one just like it out there already.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;So if you know of a better way to solve this problem please let me know.&lt;/strong&gt;  Sound off in the comments below or reach out to me via &lt;a href=&quot;//twitter.com/paulmgower&quot;&gt;Twitter&lt;/a&gt; or &lt;a href=&quot;//linkedin.com/in/pmgower&quot;&gt;LinkedIn&lt;/a&gt;!&lt;/p&gt;
+
+&lt;p&gt;Once I develop or discover the best solution to this problem, I will write another article about how the solution was implemented and update this article to link to it.&lt;/p&gt;</content><author><name>Paul Gower</name></author><category term="Umbraco" /><summary type="html">In a more recent project, I discovered that the Nested Content control I have grown to love did not work the way I had initially thought.</summary></entry><entry><title type="html">Switching Microsoft Azure Subscriptions for WordPress Site</title><link href="http://lunamark.github.io/Switching-Microsoft-Azure-Subscriptions-for-WordPress-Site.html" rel="alternate" type="text/html" title="Switching Microsoft Azure Subscriptions for WordPress Site" /><published>2014-05-11T15:22:00-05:00</published><updated>2014-05-11T15:22:00-05:00</updated><id>http://lunamark.github.io/Switching-Microsoft-Azure-Subscriptions-for-WordPress-Site</id><content type="html" xml:base="http://lunamark.github.io/Switching-Microsoft-Azure-Subscriptions-for-WordPress-Site.html">&lt;p&gt;Have you ever wanted to move your WordPress &lt;a href=&quot;http://azure.microsoft.com/&quot;&gt;Microsoft Azure Website&lt;/a&gt; from a pay-as-you-go subscription to the subscription that you get with an &lt;a href=&quot;http://msdn.microsoft.com/subscriptions&quot;&gt;MSDN license&lt;/a&gt;? It’s not as easy as you would think. Today I spent several hours battling with &lt;a href=&quot;http://azure.microsoft.com/&quot;&gt;Microsoft Azure&lt;/a&gt;, &lt;a href=&quot;http://www.cleardb.com/&quot;&gt;ClearDB&lt;/a&gt; (service Microsoft Azure uses for MySql databases) and &lt;a href=&quot;http://wordpress.org/&quot;&gt;WordPress&lt;/a&gt; trying to move my website, &lt;a href=&quot;http://lunamark.com/&quot;&gt;lunamark.com&lt;/a&gt;, from my pay-as-you-go subscription to my subscription that is tied to my MSDN license.&lt;/p&gt;
+
+&lt;p&gt;A month ago, I setup my new business website lunamark.com using Microsoft Azure Websites. At that time I did not have my MSDN license, so I setup a pay-as-you-go subscription in order to use my custom domain. Moving my website from a pay-as-you-go subscription to the new subscription tied to my MSDN license took longer than I anticipated and required more steps. In the event that you have to move a Microsoft Azure Website between subscriptions, I hope the following notes will make it easier for you.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Backup your website
+    &lt;ul&gt;
+      &lt;li&gt;Backup the files for the source website by downloading the &lt;em&gt;wwwroot&lt;/em&gt; folder using your favorite FTP program (I used &lt;a href=&quot;http://cyberduck.io/&quot;&gt;Cyberduck for Mac&lt;/a&gt;. Find your FTP credentials in the source website’s publish profile.&lt;/li&gt;
+      &lt;li&gt;Backup your database which is a linked resource to the source website by using &lt;em&gt;mysqldump&lt;/em&gt;.  If you don’t have that on your computer you can download the &lt;a href=&quot;http://dev.mysql.com/downloads/mysql/&quot;&gt;MySQL Suite&lt;/a&gt; which will include both the &lt;em&gt;mysqldump&lt;/em&gt; and &lt;em&gt;mysql&lt;/em&gt; commands. Thanks to [John Papa’s blog post](http://www.johnpapa.net/azurecleardbmysql/ I was able to do easily backup and restore my MySql database. Here is the command I used on my Mac to backup my database:&lt;br /&gt;
+ &lt;code style=&quot;font-size: small&quot;&gt;
+ /usr/local/mysql/bin/mysqldump -e -u[user] -p[password]
+  -h[host] [database] &amp;gt; [output file]
+ &lt;/code&gt;&lt;br /&gt;
+ &lt;em&gt;Note: the -e makes multiple values rows for the insert syntax but is not required&lt;/em&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Create a new Microsoft Azure Website (from WordPress gallery).  I will refer to this website as the destination website to keep the two straight.
+&lt;em&gt;Note: This will require a new name (new_name.azurewebsites.net). Later we will need to replace the old_name with the new_name in the backup sql file created above.&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;Get the connection string from the the destination website created in step 2 and use it to update the &lt;em&gt;wwwroot/wp-config.php&lt;/em&gt; file downloaded from the source website with the new database name and login information.&lt;/li&gt;
+  &lt;li&gt;Connect to the destination website with your favorite FTP program and delete the wwwroot folder.&lt;/li&gt;
+  &lt;li&gt;Upload the source wwwroot folder with the updated wp-config.php file (which should now be configured to use the destination’s MySQL database)&lt;/li&gt;
+  &lt;li&gt;Edit the [output file] that was created in step 1 and replace the &lt;em&gt;old_name&lt;/em&gt; of the website with the &lt;em&gt;new_name&lt;/em&gt; that was created in step 2&lt;/li&gt;
+  &lt;li&gt;Use the &lt;em&gt;mysql&lt;/em&gt; command to update your &lt;em&gt;new&lt;/em&gt; database.&lt;br /&gt;
+&lt;code style=&quot;font-size: small&quot;&gt;
+/usr/local/mysql/bin/mysql u[user] -p[password]
+ -h[host] [database] &amp;lt; [input file]
+&lt;/code&gt;&lt;br /&gt;
+&lt;em&gt;Note: the [input file] would be the name of the [output file] that was created above and modified to replace the name of the old_name with the new_name of the Microsoft Azure Website&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;Make sure you remove the old Microsoft Azure Website’s reference to the custom domain name you are planning to use.&lt;/li&gt;
+  &lt;li&gt;Now set it up your custom domain in the new Microsoft Azure Website.&lt;/li&gt;
+  &lt;li&gt;Last, I would recommend stopping the old Microsoft Azure Website to verify the new website is working as desired before deleting the old website&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Please Note:&lt;/strong&gt; The steps described above will require some downtime for your website. If downtime on your website is not an option, then watch &lt;a href=&quot;http://www.hanselman.com/blog/PennyPinchingVideoMovingAnAzureWebsiteBetweenDataCenters.aspx&quot;&gt;this Scott Hanselman video&lt;/a&gt; where he recommends to use a load balancer to not have any downtime.&lt;/p&gt;</content><author><name>Paul Gower</name></author><category term="ASP.NET" /><category term="IIS7" /><category term="Server Config" /><summary type="html">Have you ever wanted to move your WordPress Microsoft Azure Website from a pay-as-you-go subscription to a BizSpark subscription</summary></entry><entry><title type="html">Web.config and IIS7 Woes</title><link href="http://lunamark.github.io/Web.config-and-IIS7-Woes.html" rel="alternate" type="text/html" title="Web.config and IIS7 Woes" /><published>2013-04-02T19:03:00-05:00</published><updated>2013-04-02T19:03:00-05:00</updated><id>http://lunamark.github.io/Web.config-and-IIS7-Woes</id><content type="html" xml:base="http://lunamark.github.io/Web.config-and-IIS7-Woes.html">&lt;p&gt;Today I spent the majority of my day trying to debug why our QA environment would not work to only figure out one of the two issues.&lt;/p&gt;
+
+&lt;p&gt;It was supposed to be a simple 30 minute x-copy deploy but it turned into an almost 7 hour deployment.&lt;/p&gt;
+
+&lt;p&gt;The first set of issues were basic server setup issues like ASP.NET and WCF not being registered properly into IIS. Once I was able to finally get the website up and running against the QA database I discovered a major bug. Of course I hadn’t encountered it in my development environment and just like the old saying “It worked on my machine!” Truth be told I don’t like that saying very much but it is usually unfortunately true. As most developers know the hardest type of bugs to find are the ones you can’t reproduce easily.&lt;/p&gt;
+
+&lt;p&gt;Now I have a major bug that is going to cause QA some headaches but on top of that I discover that JavaScript code is not working. The ASP.NET AJAX functionality was not working properly and was even causing the Infragistics controls to not function at all on some of my pages. This was a bigger issue than the major one I found initially. After spending way to long on this issue trying to determine if it was an Infragistincs control issue or if it was a server setup issue or an IIS configuration issue here is what I found to be the problem:&lt;/p&gt;
+
+&lt;p&gt;The &lt;code&gt;&amp;lt;system.web&amp;gt;&lt;/code&gt; section is for IIS6 and below; whereas, the &lt;code&gt;&amp;lt;system.webServer&amp;gt;&lt;/code&gt; section is for IIS7.  The issue was I had the &lt;code&gt;&amp;lt;httpHandlers&amp;gt;&lt;/code&gt; section in the &lt;code&gt;&amp;lt;system.web&amp;gt;&lt;/code&gt; section which I thought was enough; however, I did not have the &lt;code&gt;&amp;lt;handlers&amp;gt;&lt;/code&gt; section in the &lt;code&gt;&amp;lt;system.webServer&amp;gt;&lt;/code&gt; section.&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Unfortunately this code was in my web.config in the version that is checked into TFS but some how it was removed which caused me to waste over half my day debugging issues. So hopefully this blog post will help someone else not waste a half day like I did or if I come across this issue again I can hopefully remember to search my blog before wasting too much time!&lt;/p&gt;</content><author><name>Paul Gower</name></author><category term="ASP.NET" /><category term="IIS7" /><category term="Server Config" /><summary type="html">Today I spent the majority of my day trying to debug why our QA environment would not work to only figure out one of the two issues. It was supposed to be a simple 30 minute x-copy deploy but it turned into an almost 7 hour deployment. The first set of issues were basic server setup issues like ASP.NET and WCF not being registered properly into IIS. Once I was able to finally get the website up and running against the QA database I discovered a major bug. Of course I hadn’t encountered it in my development environment and just like the old saying “It worked on my machine!” Truth be told I don’t like that saying very much but it is usually unfortunately true. As most developers know the hardest type of bugs to find are the ones you can’t reproduce easily. Now I have a major bug that is going to cause QA some headaches but on top of that I discover that JavaScript code is not working. The ASP.NET AJAX functionality was not working properly and was even causing the Infragistics controls to not function at all on some of my pages. This was a bigger issue than the major one I found initially. After spending way to long on this issue trying to determine if it was an Infragistincs control issue or if it was a server setup issue or an IIS configuration issue here is what I found to be the problem: The &amp;lt;system.web&amp;gt; section is for IIS6 and below; whereas, the &amp;lt;system.webServer&amp;gt; section is for IIS7. The issue was I had the &amp;lt;httpHandlers&amp;gt; section in the &amp;lt;system.web&amp;gt; section which I thought was enough; however, I did not have the &amp;lt;handlers&amp;gt; section in the &amp;lt;system.webServer&amp;gt; section. Unfortunately this code was in my web.config in the version that is checked into TFS but some how it was removed which caused me to waste over half my day debugging issues. So hopefully this blog post will help someone else not waste a half day like I did or if I come across this issue again I can hopefully remember to search my blog before wasting too much time!</summary></entry><entry><title type="html">Setting up DBMail in SQL Server 2012</title><link href="http://lunamark.github.io/Setting-up-DBMail-in-SQL-Server-2012.html" rel="alternate" type="text/html" title="Setting up DBMail in SQL Server 2012" /><published>2012-11-13T14:23:00-06:00</published><updated>2012-11-13T14:23:00-06:00</updated><id>http://lunamark.github.io/Setting-up-DBMail-in-SQL-Server-2012</id><content type="html" xml:base="http://lunamark.github.io/Setting-up-DBMail-in-SQL-Server-2012.html">&lt;p&gt;Recently I needed to setup database mail in SQL Server 2012 and here is what I did (so if/when i have to do it again I will remember how to do it):&lt;/p&gt;
+
+&lt;p&gt;Run this script to create the sysmail account and profile:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;sql&quot;&gt;use msdb
+GO
+DECLARE @ProfileName VARCHAR(255)
+DECLARE @AccountName VARCHAR(255)
+DECLARE @SMTPAddress VARCHAR(255)
+DECLARE @EmailAddress VARCHAR(128)
+DECLARE @DisplayUser VARCHAR(128)
+
+SET @ProfileName = 'DefaultDBMailProfile';
+SET @AccountName = 'DefaultDBMailAccount';
+SET @SMTPAddress = 'smtp server address goes here';
+SET @EmailAddress = 'from email address goes here';
+SET @DisplayUser = 'from display name goes here';
+
+EXECUTE msdb.dbo.sysmail_add_account_sp
+@account_name = @AccountName,
+@email_address = @EmailAddress,
+@display_name = @DisplayUser,
+@mailserver_name = @SMTPAddress
+
+EXECUTE msdb.dbo.sysmail_add_profile_sp
+@profile_name = @ProfileName
+
+EXECUTE msdb.dbo.sysmail_add_profileaccount_sp
+@profile_name = @ProfileName,
+@account_name = @AccountName,
+@sequence_number = 1 ;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Run this script to enable Database Mail on the server (&lt;a href=&quot;http://msdn.microsoft.com/en-us/library/ms191189.aspx&quot;&gt;MSDN Link to Database Mail XPs Server Configuration Option&lt;/a&gt;):&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;sql&quot;&gt;USE Master
+GO
+sp_configure 'show advanced options', 1
+GO
+reconfigure with override
+GO
+sp_configure 'Database Mail XPs', 1
+GO
+reconfigure 
+GO
+sp_configure 'show advanced options', 0
+GO
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To test and make sure you have it setup you can use this script:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;sql&quot;&gt;EXEC msdb.dbo.sp_send_dbmail
+@recipients = 'to email address goes here',
+@body= 'Test Email Body', 
+@subject = 'Test Email Subject',
+@profile_name = 'DefaultDBMailProfile'
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Please note:&lt;/strong&gt; many of the variables in the above scripts have test data in them. Be sure to set the variables to the values that apply to your environment.&lt;/p&gt;</content><author><name>Paul Gower</name></author><category term="Database Mail" /><category term="DBMail" /><category term="SQL Server 2012" /><summary type="html">Recently I needed to setup database mail in SQL Server 2012 and here is what I did (so if/when i have to do it again I will remember how to do it): Run this script to create the sysmail account and profile: use msdb GO DECLARE @ProfileName VARCHAR(255) DECLARE @AccountName VARCHAR(255) DECLARE @SMTPAddress VARCHAR(255) DECLARE @EmailAddress VARCHAR(128) DECLARE @DisplayUser VARCHAR(128) SET @ProfileName = 'DefaultDBMailProfile'; SET @AccountName = 'DefaultDBMailAccount'; SET @SMTPAddress = 'smtp server address goes here'; SET @EmailAddress = 'from email address goes here'; SET @DisplayUser = 'from display name goes here'; EXECUTE msdb.dbo.sysmail_add_account_sp @account_name = @AccountName, @email_address = @EmailAddress, @display_name = @DisplayUser, @mailserver_name = @SMTPAddress EXECUTE msdb.dbo.sysmail_add_profile_sp @profile_name = @ProfileName EXECUTE msdb.dbo.sysmail_add_profileaccount_sp @profile_name = @ProfileName, @account_name = @AccountName, @sequence_number = 1 ; Run this script to enable Database Mail on the server (MSDN Link to Database Mail XPs Server Configuration Option): USE Master GO sp_configure 'show advanced options', 1 GO reconfigure with override GO sp_configure 'Database Mail XPs', 1 GO reconfigure GO sp_configure 'show advanced options', 0 GO To test and make sure you have it setup you can use this script: EXEC msdb.dbo.sp_send_dbmail @recipients = 'to email address goes here', @body= 'Test Email Body', @subject = 'Test Email Subject', @profile_name = 'DefaultDBMailProfile' Please note: many of the variables in the above scripts have test data in them. Be sure to set the variables to the values that apply to your environment.</summary></entry><entry><title type="html">Robots.txt file in MVC3</title><link href="http://lunamark.github.io/Robot-txt-file-in-MVC.html" rel="alternate" type="text/html" title="Robots.txt file in MVC3" /><published>2012-09-18T19:14:00-05:00</published><updated>2012-09-18T19:14:00-05:00</updated><id>http://lunamark.github.io/Robot-txt-file-in-MVC</id><content type="html" xml:base="http://lunamark.github.io/Robot-txt-file-in-MVC.html">&lt;p&gt;Recently I was asked to look at adding a robots.txt file to a client’s website that we built on ASP.NET MVC3. So I did some &lt;a href=&quot;http://www.google.com/&quot;&gt;research&lt;/a&gt; and found out some interesting information about the robots.txt file.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;The file is just a suggestion and bots are &lt;a href=&quot;http://www.robotstxt.org/faq/blockjustbad.html&quot;&gt;not require&lt;/a&gt; to follow what you ask them to do via the robots.txt file.&lt;/li&gt;
+  &lt;li&gt;The file is really an exclusion list instead of an inclusion list. This means you have to put the places you don’t want the bots to view which could be a bad idea in that it would give the bad bots areas they should focus on hacking.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;After using my &lt;a href=&quot;http://www.google.com/&quot;&gt;favorite research tool&lt;/a&gt; we decided to not put a robots.txt file on the website initially. Soon after our deploy we noticed in the &lt;a href=&quot;http://code.google.com/p/elmah/&quot;&gt;ELMAH&lt;/a&gt; logs that we were seeing a considerable amount of errors which contained this error message:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The controller for path ‘/robots.txt’ was not found or does not implement IController.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;So now we decided we at least needed an empty robots.txt file out there to prevent all these unnecessary errors. So I did some more [research](http://www.google.com/ and developed a solution for MVC3:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Basically you just add the physical robots.txt file to the website by adding it to the project at the root level. It could be empty or could contain the basic level of content required in a robots.txt.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Now that you have the physical file on the website it will ignore the ASP.NET MVC3 routing as long as you haven’t changed &lt;a href=&quot;http://msdn.microsoft.com/en-us/library/cc668201%28v=vs.100%29.aspx#scenarios_when_routing_is_not_applied&quot;&gt;the default setting of the RouteExistingFiles property of the RouteCollection which will ignore routing if a physical file is found that matches the URL pattern&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;To ensure that the physical file will always be served up even if someone changes the RouteExistingFiles property you can add the following ignore route code to the global.asax.cs file:&lt;br /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;csharp&quot;&gt;routes.IgnoreRoute(&quot;{robotstxt}&quot;, new {robotstxt=@&quot;(.*/)?robots.txt(/.*&quot;});&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Your mileage may vary with the robots.txt file and it might not be a bad idea to have a robots.txt with some exclusions if you really need to exclude some of your content from web crawlers or bots.&lt;/p&gt;
+
+&lt;p&gt;This particular client didn’t really need one because most if not all the content of their website required that you log into their website so bots and web crawlers wouldn’t get much content from crawling their entire site.&lt;/p&gt;</content><author><name>Paul Gower</name></author><category term="asp.net mvc" /><summary type="html">Recently I was asked to look at adding a robots.txt file to a client's website that we built on ASP.NET MVC3. So I did some research and found out</summary></entry><entry><title type="html">Using BIDS 2008 to access TFS 2010</title><link href="http://lunamark.github.io/Using-BIDS-2008-to-access-TFS-2010.html" rel="alternate" type="text/html" title="Using BIDS 2008 to access TFS 2010" /><published>2012-09-04T13:03:00-05:00</published><updated>2012-09-04T13:03:00-05:00</updated><id>http://lunamark.github.io/Using-BIDS-2008-to-access-TFS-2010</id><content type="html" xml:base="http://lunamark.github.io/Using-BIDS-2008-to-access-TFS-2010.html">&lt;p&gt;Recently I had a client that needed to use BIDS to create some SSRS reports but they wanted to use TFS2010 for their source control. The latest version of BIDS is really a VS2008 shell so I knew it wouldn’t be as simple as installing Team Explorer. I was sure I wasn’t the first person to come across this issue so I pulled out my &lt;a href=&quot;http://www.google.com/&quot;&gt;favorite research tool&lt;/a&gt; and did some research on the exact steps that need to be taken to enable Team Explorer for BIDS 2008.&lt;/p&gt;
+
+&lt;p&gt;I found several blog posts about the subject but this &lt;a href=&quot;http://microsoft-ssis.blogspot.com/2012/04/ssis-2008-with-team-foundation-server.html&quot;&gt;blog post by Joost van Rossum&lt;/a&gt; not only gave me the exact steps to Team Explorer in VS2008 so it would connect with TFS2010 but also was written from the perspective of using BIDS2008 and not just VS2008. Here is an overview of the steps that Joost lined out in his blog post:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Install Team Explorer 2008 &lt;sup&gt;&lt;a href=&quot;http://www.microsoft.com/en-us/download/details.aspx?id=16338&quot;&gt;download link&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+  &lt;li&gt;Install SP1 for Visual Studio 2008 &lt;sup&gt;&lt;a href=&quot;http://www.microsoft.com/en-us/download/details.aspx?id=13276&quot;&gt;download link&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+  &lt;li&gt;Install VSTS 2008 SP1 Forward Compatibility Update for TFS2010 &lt;sup&gt;&lt;a href=&quot;http://www.microsoft.com/en-us/download/details.aspx?id=10834&quot;&gt;download link&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+  &lt;li&gt;Once you have all those pieces installed you have to create your server reference like this &lt;sup&gt;&lt;nobr&gt;http://&amp;lt;serverName&amp;gt;:&amp;lt;port&amp;gt;/&amp;lt;vdir&amp;gt;/&amp;lt;collectionName&amp;gt;&lt;/nobr&gt; &lt;nobr&gt;(e.g. http://TfsServer:8080/tfs/ProjectCollectionName)&lt;/nobr&gt;&lt;/sup&gt; &lt;br /&gt;which is different than you do in VS2010.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;So I followed the above steps and thought everything was working great until I tried to log in to TFS using BIDS 2008 and received this error message popup:
+&lt;img src=&quot;images/articles/2012-09-04-unable_to_switch_servers.png&quot; alt=&quot;alt text&quot; title=&quot;Unable to switch servers at this time.  The Team Explorer is busy.&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;So I went back to my &lt;a href=&quot;http://www.google.com/&quot;&gt;favorite research tool&lt;/a&gt; to do some more research and came across this &lt;a href=&quot;http://technical.blog.thomashundley.com/post/2011/07/21/Team-Explorer-2008-and-TFS-2010.aspx&quot;&gt;blog post by Tom Hudley&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;At the end of his post I discovered that my problem was with a single character! So as soon as I removed the &lt;strong&gt;/&lt;/strong&gt; on the end of my server url everything worked like a charm!&lt;/p&gt;
+
+&lt;p&gt;Thanks for the help &lt;a href=&quot;http://microsoft-ssis.blogspot.com/&quot;&gt;Joost&lt;/a&gt; and &lt;a href=&quot;http://technical.blog.thomashundley.com/&quot;&gt;Tom&lt;/a&gt;!&lt;/p&gt;</content><author><name>Paul Gower</name></author><category term="BIDS 2008" /><category term="TFS 2010" /><category term="VS 2008" /><summary type="html">Recently I had a client that needed to use BIDS to create some SSRS reports but they wanted to use TFS2010 for their source control. The latest version</summary></entry><entry><title type="html">_ViewStart.cshtml Info</title><link href="http://lunamark.github.io/ViewStart-cshtml-Info.html" rel="alternate" type="text/html" title="_ViewStart.cshtml Info" /><published>2012-06-30T09:52:00-05:00</published><updated>2012-06-30T09:52:00-05:00</updated><id>http://lunamark.github.io/ViewStart-cshtml-Info</id><content type="html" xml:base="http://lunamark.github.io/ViewStart-cshtml-Info.html">&lt;p&gt;In ASP.NET MVC3 “master pages” are handled in the &lt;strong&gt;_ViewStart.cshtml&lt;/strong&gt; file. As the name suggests the code in this file is executed before each view is rendered (see &lt;a href=&quot;http://weblogs.asp.net/scottgu/archive/2010/10/22/asp-net-mvc-3-layouts.aspx&quot;&gt;Scott Gu’s blog post&lt;/a&gt; for more details).&lt;/p&gt;
+
+&lt;p&gt;Now that you understand the basic use of _ViewStart.cshtml file lets go over the scope applied to these files. The _ViewStart.cshtml file will affect all views in the same directory and below the location of it. Also you can have another _ViewStart.cshtml file under a sub-folder which will be executed after the top level _ViewStart.cshtml. Using this feature you can in effect override the top level _ViewStart.cshtml with one closer to the view.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;images/articles/2012-06-30-viewstart_example.png&quot; alt=&quot;alt text&quot; title=&quot;ViewStart Example&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now when the &lt;strong&gt;Index.cshtml view&lt;/strong&gt; under the &lt;strong&gt;Home&lt;/strong&gt; folder is rendered, it will first execute the
+&lt;strong&gt;/Views/_ViewStart.cshtml&lt;/strong&gt; file and then it will render the &lt;strong&gt;Index.cshtml View&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;However, when the &lt;strong&gt;Index.cshtml view&lt;/strong&gt; under the &lt;u&gt;DifferentMasterPage&lt;/u&gt; folder is rendered, it will
+first execute the &lt;strong&gt;/Views/_ViewStart.cshtml&lt;/strong&gt; file, then it will execute
+the &lt;strong&gt;/Views/DifferentMasterPage/_ViewStart.cshtml&lt;/strong&gt; file, and then it will
+render the &lt;strong&gt;Index.cshtml View&lt;/strong&gt;.&lt;/p&gt;</content><author><name>Paul Gower</name></author><category term="asp.net mvc" /><summary type="html">In ASP.NET MVC3 &quot;master pages&quot; are handled in the _ViewStart.cshtml file. As the name suggests the code in this file is executed before each view is</summary></entry></feed>

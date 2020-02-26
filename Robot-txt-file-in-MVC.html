@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta name="p:domain_verify" content="9014f386d3ae48f3e6761184cc355bd7"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robots.txt file in MVC3 &mdash; Lunamark</title>
+
+    <link href="//fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- Bootstrap Optional theme -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+        
+    <link type="text/css" rel="stylesheet" href="/assets/main.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <!-- <link rel="apple-touch-icon" href="/images/logo-H.png"/> -->
+    <link href="/feed.xml" rel="alternate" type="application/rss+xml" title="Lunamark" />
+    <meta name="title" content="Robots.txt file in MVC3 ">
+    <link rel="canonical" href="http://lunamark.github.io/Robot-txt-file-in-MVC.html">
+ 
+       
+    <meta property="og:title" content="Robots.txt file in MVC3 "/>
+    <meta property="og:url" content="http://lunamark.github.io/Robot-txt-file-in-MVC.html"/>
+
+    <meta property="og:image" content="http://lunamark.github.io/images/logo-H.png"/>   
+
+    <meta property="og:description" content="Recently I was asked to look at adding a robots.txt file to a client's website that we built on ASP.NET MVC3. So I did some research and found out"/>
+    <meta name="description" content="Recently I was asked to look at adding a robots.txt file to a client's website that we built on ASP.NET MVC3. So I did some research and found out"/>
+
+    <meta property="og:site_name" content="Lunamark">
+
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-M9XWBGD');</script>
+    <!-- End Google Tag Manager -->
+         
+</head>
+
+    <body>
+        
+            <!-- Google Tag Manager (noscript) -->
+            <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M9XWBGD" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+            <!-- End Google Tag Manager (noscript) -->
+        
+
+        <section class="site-nav">
+    <header>
+        <nav id="navigation">
+            <a class="brand" href="/">
+                <img src="/images/logo-H.png" alt="Logo">
+            </a>
+            <a href="/articles/" class="home">Articles</a>
+            <a href="/services/">Services</a>
+            <a href="/speaking.html">Speaking</a>
+            <a href="/about.html">About</a>
+        </nav>
+        <!--<nav class="tagline">
+            <span>Want to learn how to ship features to your software faster?</span>
+            <a href="/roadmap.html" class="btn btn-outline">Learn More</a>
+        </nav>-->
+    </header>
+</section>
+
+
+        
+<article class="container">
+    <header>
+        <div class="meta">
+            By <address><a rel="author" href="" title="Paul Gower" target="_blank">Paul Gower</a></address> &mdash;
+            <time pubdate datetime="2012-18-September" title="September 18, 2012">September 18, 2012</time>
+        </div>
+        <h1 class="title">Robots.txt file in MVC3</h1>
+        <h2 class="subtitle"></h2>
+    </header>
+
+    <section>
+        <p>Recently I was asked to look at adding a robots.txt file to a client’s website that we built on ASP.NET MVC3. So I did some <a href="http://www.google.com/">research</a> and found out some interesting information about the robots.txt file.</p>
+
+<ol>
+  <li>The file is just a suggestion and bots are <a href="http://www.robotstxt.org/faq/blockjustbad.html">not require</a> to follow what you ask them to do via the robots.txt file.</li>
+  <li>The file is really an exclusion list instead of an inclusion list. This means you have to put the places you don’t want the bots to view which could be a bad idea in that it would give the bad bots areas they should focus on hacking.</li>
+</ol>
+
+<p>After using my <a href="http://www.google.com/">favorite research tool</a> we decided to not put a robots.txt file on the website initially. Soon after our deploy we noticed in the <a href="http://code.google.com/p/elmah/">ELMAH</a> logs that we were seeing a considerable amount of errors which contained this error message:</p>
+
+<blockquote>
+  <p>The controller for path ‘/robots.txt’ was not found or does not implement IController.</p>
+</blockquote>
+
+<p>So now we decided we at least needed an empty robots.txt file out there to prevent all these unnecessary errors. So I did some more [research](http://www.google.com/ and developed a solution for MVC3:</p>
+<ul>
+  <li>Basically you just add the physical robots.txt file to the website by adding it to the project at the root level. It could be empty or could contain the basic level of content required in a robots.txt.</li>
+</ul>
+
+<p>Now that you have the physical file on the website it will ignore the ASP.NET MVC3 routing as long as you haven’t changed <a href="http://msdn.microsoft.com/en-us/library/cc668201%28v=vs.100%29.aspx#scenarios_when_routing_is_not_applied">the default setting of the RouteExistingFiles property of the RouteCollection which will ignore routing if a physical file is found that matches the URL pattern</a>.</p>
+
+<p>To ensure that the physical file will always be served up even if someone changes the RouteExistingFiles property you can add the following ignore route code to the global.asax.cs file:<br /></p>
+
+<pre><code class="csharp">routes.IgnoreRoute("{robotstxt}", new {robotstxt=@"(.*/)?robots.txt(/.*"});</code></pre>
+
+<p>Your mileage may vary with the robots.txt file and it might not be a bad idea to have a robots.txt with some exclusions if you really need to exclude some of your content from web crawlers or bots.</p>
+
+<p>This particular client didn’t really need one because most if not all the content of their website required that you log into their website so bots and web crawlers wouldn’t get much content from crawling their entire site.</p>
+
+        
+<div class="social">
+    <div>
+        <a href="https://twitter.com/share" class="twitter-share-button"  data-text="Robots.txt file in MVC3" data-related="paulmgower">Tweet</a>
+    </div>
+    
+    
+    <div>
+        <div class="fb-like" data-width="150" data-layout="button_count" data-action="like" data-show-faces="true" data-send="false"></div>
+    </div>
+    
+    
+    
+    
+</div>
+
+    </section>
+
+    <footer>
+        <address>
+            <img src="/images/paul.jpg">
+            <p>Written by <strong><a rel="author" href="https://twitter.com/paulmgower" title="" target="_blank">Paul Gower</a></strong><br>
+            <span class="muted">Principal Consultant / Owner, Lunamark</span>
+            </p>
+        </address>
+    </footer>
+
+    
+    <section>
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'lunamark'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+    </section>
+    
+</article>
+
+
+        <footer class="site-footer">
+    <div class="container">
+        <nav>
+            <a href="/">Lunamark</a> &middot;
+            <a href="/articles/">Articles</a> &middot;
+            <a href="/services/">Services</a> &middot;
+            <a href="/speaking.html">Speaking</a> &middot;
+            <a href="/about.html">About</a>
+        </nav>
+        
+        <nav class="social">
+            
+            <a href="https://twitter.com/paulmgower" title="Follow on Twitter" target="_blank"><i class="icon icon-twitter black"></i></a>
+            
+                
+            <a href="/feed.xml" title="RSS Feed">
+                <i class="icon icon-rss black"></i>
+            </a>
+        </nav>
+    </div>
+    <div class="container">
+    <p class="copyright text-muted small">Copyright &copy; 2020 Lunamark All Rights Reserved</p> 
+</div>
+
+</footer>
+
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/assets/lib/jqBootstrapValidation.js"></script>
+<script type="text/javascript" src="/assets/main.js"></script>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=253595308025739";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+
+    </body>
+</html>
